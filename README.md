@@ -480,7 +480,7 @@ Many command line tools (like stat) use a KEY:VALUE format. The shelld function
 will turn this into a python dictionary, so you can access specific data using
 their respective keys by using something like this: shelld(COMMAND)[KEY]
 
-HERE ARE THE BUILT IN VARIABLES:
+### HERE ARE THE BUILT IN VARIABLES:
 
   STD-IN (PRIMARY INPUT)
   p        line-by-line std-in variable. p represents whatever was
@@ -544,7 +544,7 @@ Also, the ORIGINAL INPUT (history[0]) lines are split on delimiters as above, bu
 stored in os, od, ow, ou, oc, omm, om and oa as well as oslash, odot, owhitepace,
 ocomma, ominus, and oall
 
-HERE ARE THE BUILT IN FUNCTIONS AND ATTRIBUTES:
+### HERE ARE THE BUILT IN FUNCTIONS AND ATTRIBUTES:
 ```
  Function                Notes
  --------------------------------------------------------------------------------
@@ -567,13 +567,13 @@ HERE ARE THE BUILT IN FUNCTIONS AND ATTRIBUTES:
   p.dir                directory of path
   p.file               file name of path
   p.ext                file extension (jpg, tif, hip, etc) of path
-```
+
   These fuctions will work with all pyp strings eg: p, o, dot[0], p.trim(), etc.
   Strings returned by native python functions (like split()) won't have these
   available, but you can still access them using str(STRING). Basically,
   manually recasting anything using as a str(STRING) will endow them with
   the custom pyp methods and attributes.
-```
+
  --------------------------------------------------------------------------------
       LIST        (all LIST methods like pp.sort(), pp[-1], and pp.reverse() work)
  --------------------------------------------------------------------------------
@@ -619,13 +619,12 @@ HERE ARE THE BUILT IN FUNCTIONS AND ATTRIBUTES:
                        '*' wildcard
  str(STR)              turns any object into an PypStr object, allowing use
                        of custom pyp methods as well as normal string methods.
-
-SIMPLE EXAMPLES:
-===================================================================================
+```
+### SIMPLE EXAMPLES:
+```
  pyp "'foo ' + p"                 ==>  "foo" + current line
  pyp "p.replace('x','y') | p + o" ==>  current line w/replacement + original line
  pyp "p.split(':')[0]"            ==>  first field of string split on ':'
  pyp "slash[1:3]"                 ==>  array of fields 1 and 2 of string split on '/'
  pyp "s[1:3]|s"                   ==>  string of above joined with '/'
-
- ```
+```
