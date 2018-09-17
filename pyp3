@@ -1,4 +1,4 @@
-#!/usr/bin/env python 
+#!/usr/bin/env python3
 #version 2.11.30
 #author tobyrosen@gmail.com
 
@@ -7,14 +7,8 @@
 #All rights reserved.
 #Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 #Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-#Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation
-#and/or other materials provided with the distribution.
-#THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
-#THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS
-#BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-#SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
-#IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
-#OF THE POSSIBILITY OF SUCH DAMAGE.
+#Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation #and/or other materials provided with the distribution.
+#THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, #THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS #BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF #SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER #IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED #OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 import optparse
@@ -1916,7 +1910,7 @@ class Pyp(object):
 
 
 class Docs():
-    manual = '''
+    manual = Colors.GREEN + '''
     ===================================================================================
     PYED PIPER MANUAL
 
@@ -2438,7 +2432,7 @@ class Docs():
 
 
     unmodified_config = '''
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # This must be saved in same directory as pyp (or be in the python path)
 # make sure to name this PypCustom.py and change permission to 666
 
@@ -2519,28 +2513,18 @@ class PypFunctionCustom(object):
 
 
     usage = """
-pyp is a python-centric command line text manipulation tool.  It allows you to format, replace, augment
-and otherwise mangle text using standard python syntax with a few golden-oldie tricks from unix commands
-of the past. You can pipe data into pyp or cut and paste text, and then hit ctrl-D to get your input into pyp.
+pyp is a python-centric command line text manipulation tool.  It allows you to format, replace, augment and otherwise mangle text using standard python syntax with a few golden-oldie tricks from unix commands of the past. You can pipe data into pyp or cut and paste text, and then hit ctrl-D to get your input into pyp.
 
-After it's in, you can use the standard repertoire of python commands to modify the text. The key variables
-are "p", which represents EACH LINE of the input as a PYTHON STRING.  and "pp", which represents ALL of the
-inputs as a PYTHON ARRAY.
+After it's in, you can use the standard repertoire of python commands to modify the text. The key variables are "p", which represents EACH LINE of the input as a PYTHON STRING.  and "pp", which represents ALL of the inputs as a PYTHON ARRAY.
 
-You can pipe data WITHIN a pyp statement using standard unix style pipes ("|"), where "p" now represents the
-evaluation of the python statement before the "|". You can also refer back to the ORIGINAL, unadulterated
-input using the variable "o" or "original" at any time...and the variable "h" or "history" allows you
-to refer back to ANY subresult generated between pipes ("|").
+You can pipe data WITHIN a pyp statement using standard unix style pipes ("|"), where "p" now represents the evaluation of the python statement before the "|". You can also refer back to the ORIGINAL, unadulterated input using the variable "o" or "original" at any time...and the variable "h" or "history" allows you to refer back to ANY subresult generated between pipes ("|").
 
 All pyp statements should be enclosed in double quotes, with single quotes being used to enclose any strings.
 
      echo 'FOO IS AN ' | pyp "p.replace('FOO','THIS') | p + 'EXAMPLE'"
        ==> THIS IS AN EXAMPLE
 
-Splitting texton metacharacters is often critical for picking out particular fields of interest,
-so common SPLITS and JOINS have been assigned variables. For example, "underscore" or "u" will split a string
-to an array based on undercores ("_"), while "underscore" or "u" will ALSO join an array with underscores ("_")
-back to a string.
+Splitting text on metacharacters is often critical for picking out particular fields of interest, so common SPLITS and JOINS have been assigned variables. For example, "underscore" or "u" will split a string to an array based on undercores ("_"), while "underscore" or "u" will ALSO join an array with underscores ("_") back to a string.
 
 Here are a few key split/join variables; run with --manual for all variable and see examples below in the string section.
 
